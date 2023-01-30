@@ -1,0 +1,33 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .box {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 8px;
+    &.top {
+      height: 20%;
+      .date-box {
+        width: 100%;
+        height: 24px;
+      }
+      .data-show-box {
+        width: 100%;
+        height: calc(100% - 24px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    &.middle {
+      height: 40%;
+    }
+    &.bottom {
+      height: 40%;
+    }
+  }
+}

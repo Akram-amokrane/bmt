@@ -1,0 +1,28 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 8px;
+
+  .left-side {
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right-side {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .router {
+      width: 100%;
+      height: calc(100vh - 40px);
+      padding: 5px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.side-bar {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  border-right: 2px solid #eee;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    .btns {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+      .btn {
+        width: 180px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 12px 0;
+        padding: 6px 8px;
+        cursor: pointer;
+        border-radius: 12px;
+        transition: all 0.3s ease-in-out;
+        &.active {
+          background-color: #234db4;
+          .label {
+            color: #fff;
+          }
+          &:hover {
+            background-color: #1d419c;
+          }
+        }
+        &:hover {
+          background-color: #eee;
+        }
+        .label {
+          padding-left: 10px;
+          color: #333;
+        }
+      }
+    }
+  }
+}

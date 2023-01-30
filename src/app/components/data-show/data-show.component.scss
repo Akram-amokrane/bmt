@@ -1,0 +1,31 @@
+.data-show {
+  width: 210px;
+  height: 100px;
+  background-color: aqua;
+  border-radius: 10px;
+  padding: 24px 8px;
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .input-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .input {
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .state {
+      display: flex;
+      .sub-input {
+        font-size: 12px;
+        padding-bottom: 3px;
+      }
+      .input-state {
+        font-size: 12px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+}

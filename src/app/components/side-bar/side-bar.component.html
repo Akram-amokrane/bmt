@@ -1,0 +1,40 @@
+<div class="side-bar">
+  <div class="top">
+    <div class="logo">
+      <svg-icon src="./assets/icons/logo.svg"></svg-icon>
+    </div>
+
+    <div class="btns">
+      <div
+        class="btn dashboard-btn {{ currentPage == 'd' ? 'active' : '' }}"
+        (click)="goToDashboard()"
+      >
+        <svg-icon
+          src="./assets/icons/dashboard.svg"
+          [svgStyle]="{
+            'width.px': 24,
+            fill: currentPage == 'd' ? '#fff' : '#333'
+          }"
+        ></svg-icon>
+        <div class="label">Tableau de bord</div>
+      </div>
+      <div
+        class="btn prediction-btn {{ currentPage == 'p' ? 'active' : '' }}"
+        (click)="goToPrediction()"
+      >
+        <svg-icon
+          src="./assets/icons/prediction.svg"
+          [svgStyle]="{
+            'width.px': 24,
+            fill: currentPage == 'p' ? '#fff' : '#333'
+          }"
+        ></svg-icon>
+        <div class="label">Prediction</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="profile">xyz</div>
+  </div>
+</div>

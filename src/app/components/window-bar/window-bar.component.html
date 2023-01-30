@@ -1,0 +1,26 @@
+<div data-tauri-drag-region class="window-bar">
+  <div class="titlebar-button logout">
+    <svg-icon
+      src="./assets/icons/log_out.svg"
+      [svgStyle]="{ 'width.px': 20 }"
+    ></svg-icon>
+  </div>
+  <div class="titlebar-button min" (click)="minimizeWindow()">
+    <svg-icon
+      src="./assets/icons/minimize.svg"
+      [svgStyle]="{ 'width.px': 18 }"
+    ></svg-icon>
+  </div>
+  <div class="titlebar-button max" (click)="maximizeWindow()">
+    <svg-icon
+      src="./assets/icons/maximize.svg"
+      [svgStyle]="{ 'width.px': 18 }"
+    ></svg-icon>
+  </div>
+  <div class="titlebar-button close" (click)="closeWindow()">
+    <svg-icon
+      src="./assets/icons/exit.svg"
+      [svgStyle]="{ 'width.px': 16 }"
+    ></svg-icon>
+  </div>
+</div>
