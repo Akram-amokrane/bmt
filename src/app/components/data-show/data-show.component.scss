@@ -1,31 +1,26 @@
 .data-show {
   width: 210px;
-  height: 100px;
+  height: 60px;
   background-color: aqua;
   border-radius: 10px;
-  padding: 24px 8px;
+  padding: 12px 8px;
   .title {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
   }
   .input-box {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     .input {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 500;
     }
-    .state {
-      display: flex;
-      .sub-input {
-        font-size: 12px;
-        padding-bottom: 3px;
-      }
-      .input-state {
-        font-size: 12px;
-        padding-bottom: 3px;
-      }
+
+    .icon {
+      position: absolute;
+      right: 12px;
     }
   }
 }

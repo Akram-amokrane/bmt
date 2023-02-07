@@ -4,9 +4,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { PredictionComponent } from './pages/prediction/prediction.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: "dashboard", pathMatch: "full" },
-  { path: "dashboard", component: DashboardComponent },
-  { path: "prediction", component: PredictionComponent },
+  { path: "dashboard", component: DashboardComponent, data: { connected: true } },
+  { path: "login", component: DashboardComponent, data: { connected: false } },
+  { path: "prediction", component: PredictionComponent, data: { connected: true } },
 ];
 
 @NgModule({

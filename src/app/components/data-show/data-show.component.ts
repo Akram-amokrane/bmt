@@ -5,18 +5,14 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './data-show.component.html',
   styleUrls: ['./data-show.component.scss']
 })
-export class DataShowComponent implements OnInit {
-  @Input() data!: any;
+export class DataShowComponent {
+  @Input() title!: string;
+  @Input() icon?: string;
+  @Input() value!: number;
+  @Input() currency = false;
   @Input() bg: String = "#BAEDBD90";
-  public stateOpe = "+"
 
-  ngOnInit(): void {
-    if (this.data.state == "down") {
-      this.stateOpe = "-"
-    } else {
-      this.stateOpe = "+"
-    }
-  }
+
 }
 
 

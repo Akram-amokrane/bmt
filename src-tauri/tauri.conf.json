@@ -12,7 +12,12 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "window": {
+        "all": true
+      },
+      "http": {
+        "scope": ["http://localhost:3000/*"]
+      }
     },
     "bundle": {
       "active": true,
@@ -29,7 +34,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "dz.akram.bmt",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -55,6 +60,7 @@
     },
     "windows": [
       {
+        "label": "main",
         "fullscreen": false,
         "height": 700,
         "resizable": true,
@@ -62,7 +68,21 @@
         "width": 1200,
         "center": true,
         "decorations": false,
-        "transparent": true
+        "transparent": true,
+        "visible": false,
+        "url": "http://localhost:4200/dashboard"
+      },
+      {
+        "label": "login",
+        "fullscreen": false,
+        "height": 400,
+        "resizable": false,
+        "title": "bmt",
+        "width": 700,
+        "center": true,
+        "decorations": false,
+        "transparent": true,
+        "url": "http://localhost:4200/login"
       }
     ]
   }

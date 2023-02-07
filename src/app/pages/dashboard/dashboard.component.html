@@ -1,12 +1,116 @@
 <div class="dashboard">
   <div class="box top">
-    <div class="date-box"></div>
+    <div class="date-box">
+      <div class="date">
+        <div class="from">
+          <app-date-picker
+            label="De:"
+            init="01/2016"
+            (value)="getFromDate($event)"
+            [max]="to"
+          ></app-date-picker>
+        </div>
+        <div class="to">
+          <app-date-picker
+            label="A:"
+            init="01/2017"
+            (value)="getToDate($event)"
+            [min]="from"
+          ></app-date-picker>
+        </div>
+      </div>
+    </div>
     <div class="data-show-box">
-      <app-data-show [data]="datashow"></app-data-show>
-      <app-data-show [data]="datashow" bg="#95A4Fc5d0"></app-data-show>
-      <app-data-show [data]="datashow"></app-data-show>
+      <app-data-show
+        title="Chiffre d'affaire"
+        [value]="dataShow?.chiffre_affaire || 0"
+        [currency]="true"
+      ></app-data-show>
+      <app-data-show
+        title="Navires"
+        [value]="dataShow?.navires || 0"
+        bg="#95A4Fc5d"
+      ></app-data-show>
+      <app-data-show
+        title="Conteneurs"
+        [value]="dataShow?.conteneurs || 0"
+      ></app-data-show>
     </div>
   </div>
-  <div class="box middle"></div>
-  <div class="box bottom"></div>
+  <div class="box middle">
+    <div class="ca-box" #ca>
+      <div class="header">
+        <div class="title">Chiffre d'affaire</div>
+        <div class="params"></div>
+      </div>
+      <div class="chart">
+        <ngx-charts-line-chart
+          [xAxis]="config.line.xAxis"
+          [yAxis]="config.line.yAxis"
+          [showGridLines]="config.line.showGridLines"
+          [autoScale]="config.line.autoScale"
+          [roundDomains]="config.line.roundDomains"
+          [customColors]="config.line.customColors"
+          [results]="dataLine"
+          [curve]="curve"
+        ></ngx-charts-line-chart>
+      </div>
+    </div>
+    <div class="cons-box">
+      <div class="header">
+        <div class="title">Consignataire</div>
+      </div>
+      <div class="percents-box">
+        <app-percent-bar
+          *ngFor="let c of consignataire"
+          [data]="c"
+        ></app-percent-bar>
+      </div>
+    </div>
+  </div>
+  <div class="box bottom">
+    <div class="emb-deb-box">
+      <div class="header">
+        <div class="title">Embarquement & Debarquement</div>
+      </div>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [xAxis]="config.bar.xAxis"
+          [yAxis]="config.bar.yAxis"
+          [showGridLines]="config.bar.showGridLines"
+          [roundDomains]="config.bar.roundDomains"
+          [customColors]="config.bar.customColors"
+          [results]="embDebData"
+        ></ngx-charts-bar-vertical>
+      </div>
+    </div>
+    <div class="prov-box">
+      <div class="header">
+        <div class="title">Provenance</div>
+      </div>
+      <div class="chart-box">
+        <div class="chart">
+          <ngx-charts-pie-chart
+            [results]="provenance"
+            [doughnut]="config.pie.doughnut"
+            [arcWidth]="config.pie.arcWidth"
+            scheme="vivid"
+            [labels]="true"
+          >
+          </ngx-charts-pie-chart>
+        </div>
+        <!-- <div class="legend">
+          <div class="item" *ngFor="let item of provenance; let length = index">
+            <div
+              class="point"
+              [ngStyle]="{
+                background: config.pie.colors[length % config.pie.colors.length]
+              }"
+            ></div>
+            <div class="name">{{ item.name }}</div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
 </div>

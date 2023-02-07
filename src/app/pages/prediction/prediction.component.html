@@ -1,1 +1,85 @@
-<p>prediction works!</p>
+<div class="prediction">
+  <div class="chart-box">
+    <div class="header">
+      <div class="title">Chiffre d'affaire</div>
+      <div class="form">
+        <div class="from">
+          <app-date-picker
+            label="De:"
+            init="01/2023"
+            (value)="getFromDate($event)"
+          ></app-date-picker>
+        </div>
+        <div class="to">
+          <app-date-picker
+            label="A:"
+            init="01/2024"
+            (value)="getToDate($event)"
+          ></app-date-picker>
+        </div>
+      </div>
+    </div>
+    <div class="chart">
+      <ngx-charts-line-chart
+        [xAxis]="config.predLine.xAxis"
+        [yAxis]="config.predLine.yAxis"
+        [showGridLines]="config.predLine.showGridLines"
+        [autoScale]="config.predLine.autoScale"
+        [roundDomains]="config.predLine.roundDomains"
+        [customColors]="config.predLine.customColors"
+        [results]="lineData"
+        [curve]="curve"
+      ></ngx-charts-line-chart>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="table-box" [ngStyle]="{ width: showAdmin ? '69%' : '100%' }">
+      <table>
+        <thead>
+          <tr>
+            <th class="left">Mois</th>
+            <th class="left">Année</th>
+            <th class="right">Prédiction</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of prediction">
+            <td class="left">{{ d.month }}</td>
+            <td class="left">{{ d.year }}</td>
+            <td class="right">{{ d.value | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="admin-panel" *ngIf="showAdmin">
+      <div class="model">
+        <div class="title">Modéle</div>
+        <div class="value">Regression Linear</div>
+      </div>
+      <div class="score-box">
+        <circle-progress
+          [percent]="modelScore"
+          [radius]="60"
+          [outerStrokeWidth]="5"
+          [innerStrokeWidth]="2"
+          [outerStrokeColor]="'#234db4'"
+          [innerStrokeColor]="'#234db440'"
+          subtitle="Score"
+          subtitleFontSize="14"
+        ></circle-progress>
+      </div>
+      <div class="train-btn">
+        <div class="btn" (click)="trainModel()">
+          <svg-icon
+            src="./assets/icons/Refresh.svg"
+            [svgStyle]="{
+              'width.px': 24,
+              fill: '#fff'
+            }"
+          ></svg-icon>
+          <div class="label">Retrainer le modéle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

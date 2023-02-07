@@ -1,0 +1,7 @@
+<div class="percent-bar">
+  <div class="label">{{ data.name | uppercase }}</div>
+  <div class="progress-box" #p>
+    <div class="progress" [ngStyle]="{ 'width.px': getPregressWidth(p) }"></div>
+    <div class="percent">{{ data.value | percent }}</div>
+  </div>
+</div>

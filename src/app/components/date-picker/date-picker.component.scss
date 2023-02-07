@@ -1,0 +1,25 @@
+.date-picker {
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  .lebel {
+  }
+  .input-box {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    input {
+      width: 110px;
+      background-color: transparent;
+      border: none;
+    }
+    .icon {
+      position: absolute;
+      right: 2px;
+      top: -5px;
+    }
+  }
+}

@@ -1,15 +1,10 @@
 <div class="data-show" [style]="{ 'background-color': bg }">
   <div class="data">
-    <div class="title">{{ data.title | titlecase }}</div>
+    <div class="title">{{ title | titlecase }}</div>
     <div class="input-box">
-      <div class="input">{{ data.value | currency : "" : "" : "1.0-0" }}</div>
-      <div class="state" *ngIf="data.percent && data.state">
-        <div class="sub-input">
-          {{ stateOpe }}{{ data.percent | percent : "1.0-1" }}
-        </div>
-        <div class="input-state">
-          <svg-icon src="./assets/icons/state-{{ data.state }}.svg"></svg-icon>
-        </div>
+      <div class="input">{{ value | currency }}</div>
+      <div class="icon" *ngIf="icon">
+        <svg-icon src="./assets/icons/{{ icon }}.svg"></svg-icon>
       </div>
     </div>
   </div>

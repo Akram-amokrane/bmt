@@ -1,0 +1,32 @@
+{
+  "line":{
+    "name":"Chiffre d'affaire",
+    "xAxis":true,
+    "yAxis":true,
+    "showGridLines":false,
+    "autoScale":true,
+    "roundDomains":true,
+    "customColors":[{ "name": "Chiffre d'affaire", "value": "#1FC198" }]
+  },
+  "predLine":{
+    "name":"Chiffre d'affaire",
+    "xAxis":true,
+    "yAxis":true,
+    "showGridLines":false,
+    "autoScale":true,
+    "roundDomains":true,
+    "customColors":[{ "name": "Chiffre d'affaire", "value": "#2347B4" }]
+  },
+  "bar":{
+    "xAxis":true,
+    "yAxis":true,
+    "showGridLines":false,
+    "roundDomains":true,
+    "customColors":[{ "name": "Embarquement", "value": "#234db4" },{ "name": "Debarquement", "value": "#1FC198" }]
+  },
+  "pie":{
+    "doughnut":true,
+    "arcWidth":0.3,
+    "colors":["#BAEDBD","#95A4FC","#C6C7F8","#333333","#234db4"]
+  }
+}

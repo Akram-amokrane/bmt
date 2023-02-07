@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiDash: "http://localhost:3000/dashboard",
+  apiPred: "http://localhost:3000/prediction",
+  apiAuth: "http://localhost:3000/auth"
 };
 
 /*

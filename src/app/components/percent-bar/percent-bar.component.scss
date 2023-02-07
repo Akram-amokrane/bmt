@@ -1,0 +1,30 @@
+.percent-bar {
+  width: 100%;
+  padding: 3px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .label {
+    width: 30%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .progress-box {
+    width: 70%;
+    height: 12px;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .progress {
+      height: 100%;
+      background-color: #234db4;
+      border-radius: 0 12px 12px 0;
+    }
+    .percent {
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  }
+}

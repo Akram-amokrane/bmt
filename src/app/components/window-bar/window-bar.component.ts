@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { appWindow } from "@tauri-apps/api/window"
+import { appWindow, WebviewWindow } from "@tauri-apps/api/window"
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-window-bar',
@@ -8,6 +9,8 @@ import { appWindow } from "@tauri-apps/api/window"
 })
 export class WindowBarComponent {
 
+  constructor(private auth: AuthService) { }
+  public login = WebviewWindow.getByLabel("login")
 
   maximizeWindow() {
     appWindow.toggleMaximize()
@@ -19,6 +22,11 @@ export class WindowBarComponent {
 
   closeWindow() {
     appWindow.close()
+    this.login?.close();
+  }
+
+  logout() {
+    this.auth.logout()
   }
 
 }

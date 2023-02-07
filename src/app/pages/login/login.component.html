@@ -1,0 +1,64 @@
+<div class="login">
+  <div class="left">
+    <div class="illus">
+      <svg-icon
+        src="./assets/icons/login_illus.svg"
+        [style]="{ 'width.px': 200 }"
+      ></svg-icon>
+    </div>
+  </div>
+  <div class="right">
+    <div class="close-bar">
+      <div class="close" (click)="close()">
+        <svg-icon
+          src="./assets/icons/exit.svg"
+          [svgStyle]="{ 'width.px': 16 }"
+        ></svg-icon>
+      </div>
+    </div>
+    <div class="logo">
+      <svg-icon src="./assets/icons/logo.svg"></svg-icon>
+    </div>
+    <div class="error-box" *ngIf="error">
+      <div class="error">Nom d'utilisateur ou mot de passe incorrect</div>
+    </div>
+    <form class="form" [formGroup]="form">
+      <div class="input-box">
+        <div class="input">
+          <div class="icon">
+            <svg-icon
+              src="./assets/icons/User.svg"
+              [svgStyle]="{ 'width.px': 24 }"
+            ></svg-icon>
+          </div>
+          <input
+            type="text"
+            name="username"
+            placeholder="Nom d'utilisateur"
+            formControlName="username"
+          />
+        </div>
+      </div>
+
+      <div class="input-box">
+        <div class="input">
+          <div class="icon">
+            <svg-icon
+              src="./assets/icons/Lock.svg"
+              [svgStyle]="{ 'width.px': 24 }"
+            ></svg-icon>
+          </div>
+          <input
+            type="password"
+            name="username"
+            placeholder="Mot de passe"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div class="btn">
+        <button (click)="onLogIn()" [disabled]="!form.valid">Connecter</button>
+      </div>
+    </form>
+  </div>
+</div>

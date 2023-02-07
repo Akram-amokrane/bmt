@@ -1,0 +1,25 @@
+<div class="date-picker">
+  <div class="label" *ngIf="label">{{ label | titlecase }}</div>
+  <div class="input-box">
+    <input
+      matInput
+      [matDatepicker]="dp"
+      [formControl]="date"
+      [readonly]="true"
+      [min]="min"
+      [max]="max"
+    />
+    <div class="icon" (click)="dp.open()">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </div>
+    <mat-datepicker
+      #dp
+      startView="multi-year"
+      (yearSelected)="chosenYearHandler($event)"
+      (monthSelected)="chosenMonthHandler($event, dp)"
+      panelClass="example-month-picker"
+      
+    >
+    </mat-datepicker>
+  </div>
+</div>
